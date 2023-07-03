@@ -10,7 +10,7 @@ function generatePassword() {
   // Verify password length.
   if (length < 8 || length > 128) {
     alert("Invalid password length. Try again.");
-    return ("");
+    return "";
   }
 
   // Prompt uppercase y/n
@@ -27,20 +27,50 @@ function generatePassword() {
 
   if (!includeLowerCase && !includeUpperCase && !includeNumeric && !includeSpecial) {
     alert("At least one character type must be selected. Please try again.");
-    return ("");
+    return "";
   }
 
   // Define Characters
-  var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
-  var numericChars = "0123456789";
-  var specialChars = "':;?/><,.}{[]+=-_)(*&^%$#@!~`";
-  console.log(uppercaseChars)
+  // Uppercase Characters
+  var upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-  // Build character set
+  // Lowercase Characters
+  var lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
+
+  // Numeric Characters
+  var numericChars = "1234567890";
+
+  // Special Characters
+  var specialChars = "`~!@#$%^&*()-_=+{}[]<>?/.,";
+
+    // Build character set
+    var charSet = "";
+
+    if (includeUpperCase) {
+      charSet += upperCaseChars
+    }
   
-
-  // Create password
+    if (includeLowerCase) {
+      charSet += lowerCaseChars
+    }
+  
+    if (includeNumeric) {
+      charSet += numericChars
+    }
+  
+    if (includeSpecial) {
+      charSet += specialChars
+    }
+  
+    // Create password
+    var password = "";
+  
+    for (var i = 0; i < length; i++) {
+      var randomIndex = Math.floor(Math.random() * charSet.length);
+      password += charSet.charAt(randomIndex);
+    }
+  
+    return password;
 
 
 }
