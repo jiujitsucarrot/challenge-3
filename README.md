@@ -64,7 +64,7 @@ In this challenge utilizing JavaScript for further assistance to develop the bes
 
 ## Final Submission
 
-* 
+* https://jiujitsucarrot.github.io/generating-javascript/
 * https://github.com/jiujitsucarrot/generating-javascript
 
 ## Grading Requirements
